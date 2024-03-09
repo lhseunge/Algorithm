@@ -1,13 +1,9 @@
+import java.util.stream.Stream;
+import java.util.stream.Collectors;
+
 class Solution {
     public int solution(String myString, String pat) {
-        
-        StringBuilder sb = new StringBuilder();
-        
-        for (char s : myString.toCharArray()) {
-            if (s == 'A') sb.append("B");
-            else sb.append("A");
-        }
-        
-        return sb.toString().contains(pat) ? 1 : 0;
+        return myString.contains(Stream.of(pat.split("")).map(str -> "A".equals(str)?"B":"A").collect(Collectors.joining()))?1:0;
+
     }
 }
