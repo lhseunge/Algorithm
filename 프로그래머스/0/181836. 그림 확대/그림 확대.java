@@ -4,16 +4,19 @@ import java.util.stream.Collectors;
 class Solution {
     public String[] solution(String[] picture, int k) {
         String[] answer = new String[picture.length * k];
+        StringBuilder sb = new StringBuilder();
         int idx = 0;
         
-        for (String s : picture) {
+        for (String pic : picture) {
+            for (String s : pic.split("")) 
+                sb.append(s.repeat(k));
+            
             for (int i = 0; i < k; i++) {
-                answer[idx] = Arrays.stream(s.split(""))
-                                          .map(x -> x = x.repeat(k))
-                                          .collect(Collectors.joining());   
+                answer[idx] = sb.toString();
                 
                 idx++;
-            }             
+            }
+            sb = new StringBuilder();
         }
         
         return answer;
