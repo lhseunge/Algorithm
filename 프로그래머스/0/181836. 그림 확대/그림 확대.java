@@ -16,7 +16,7 @@ class Solution {
                 
                 idx++;
             }
-            sb.setLength(0);
+            sb = new StringBuilder();
         }
         
         return answer;
