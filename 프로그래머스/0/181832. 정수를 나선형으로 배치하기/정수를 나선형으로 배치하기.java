@@ -5,9 +5,8 @@ class Solution {
         int idx = 1;
         int loop = 1;
 
-        if ((n * n) % 2 != 0) {
+        if ((n * n) % 2 != 0) 
             answer[n / 2][n / 2] = n * n;
-        }
 
         // [0][0] 부터 나선형 정수 배치 
         while (idx < n * n) {
