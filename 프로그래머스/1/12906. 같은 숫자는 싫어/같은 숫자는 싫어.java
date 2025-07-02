@@ -3,19 +3,17 @@ import java.util.*;
 public class Solution {
     public List<Integer> solution(int[] arr) {
 
-        List<Integer> result = new ArrayList<>();
+        Stack<Integer> stack = new Stack<>();
 
-        result.add(arr[0]);
+        for (int i : arr) {
 
-        for (int i = 1; i < arr.length; i++) {
-
-            if (result.get(result.size() - 1) != arr[i]) {
-                result.add(arr[i]);
+            if (stack.isEmpty() || stack.peek() != i) {
+                stack.push(i);
             }
-
+            
         }
 
-        return result;
+        return stack;
 
     }
 }
